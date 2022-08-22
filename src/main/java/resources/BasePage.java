@@ -19,6 +19,7 @@ public class BasePage {
 	WebDriver driver;
 	WebDriverWait wait;
 	String URL;
+	int x;
 	
 	public WebDriver initializeDriver() throws IOException 
 	{
