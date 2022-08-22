@@ -5,15 +5,19 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
 	WebDriver driver;
+	WebDriverWait wait;
 	String URL;
 	
 	public WebDriver initializeDriver() throws IOException 
@@ -45,7 +49,18 @@ public class BasePage {
 			driver = new EdgeDriver();
 		}
 		
+		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		return driver;
+	}
+	
+	public void clickElement(By locator) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator)).click();
+		//driver.findElement(locator).click();
+	}
+	
+	public void writeOnElement(By locator, String text) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator)).sendKeys(text);
+		//driver.findElement(locator).sendKeys(text);
 	}
 }
