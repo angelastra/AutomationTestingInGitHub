@@ -21,4 +21,8 @@ public class LoginPage extends BasePage {
 	public void clickOnInputUserName() {
 		clickElement(inputUserName);
 	}
+	
+	public void funcionSinUsar() {
+		
+	}
 }
