@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
 	By inputPassword = By.id("password");
 	By loginButton = By.id("login");
 	By newUserButton = By.id("newUser");
-	
+	String endPoint = "/login";
 	
 	public LoginPage() throws IOException {
 		initializeDriver();
