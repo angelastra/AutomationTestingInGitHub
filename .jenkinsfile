@@ -1,0 +1,25 @@
+pipeline
+{
+    agent any
+
+stages
+{
+    stage('MavenJob')
+    {
+        steps
+        {
+            echo "Maven Job"
+        }
+    }
+
+    stage('SoapUIFramework')
+    {
+        steps
+        {
+            echo 'soap ui framework' 
+        }
+    }
+
+}
+
+}
