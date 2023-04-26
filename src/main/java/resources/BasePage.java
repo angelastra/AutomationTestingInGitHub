@@ -3,7 +3,9 @@ package resources;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,6 +51,7 @@ public class BasePage {
 			driver = new EdgeDriver();
 		}
 		
+	
 		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		return driver;
